@@ -3,7 +3,6 @@
 namespace xgamer6\MTD\task;
 
 use pocketmine\scheduler\AsyncTask;
-use pocketmine\Server;
 use pocketmine\utils\Internet;
 
 class SendWebhookTask extends AsyncTask {
@@ -16,7 +15,7 @@ class SendWebhookTask extends AsyncTask {
         $this->message = $message;
     }
 
-    public function onRun() {
+    public function onRun(): void {
         $data = [
             "content" => $this->message
         ];
