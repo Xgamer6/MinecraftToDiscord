@@ -5,6 +5,7 @@ namespace xgamer6\MTD;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\event\server\ServerStartEvent;
+use xgamer6\MTD\task\SendWebhookTask; // Add this line
 use pocketmine\scheduler\AsyncTask;
 use pocketmine\Server;
 
