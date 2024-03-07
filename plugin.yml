@@ -1,5 +1,5 @@
 ---
-name: MinecraftToDiscord
+name: MCToDiscord
 version: 1.0
 main: xgamer6\MTD\Main
 api: 5.11.0
