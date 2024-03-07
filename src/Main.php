@@ -4,8 +4,8 @@ namespace xgamer6\MTD;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
-use pocketmine\event\server\ServerStartEvent;
-use xgamer6\MTD\task\SendWebhookTask; // Add this line
+use pocketmine\event\server\ServerCommandEvent; // Corrected import
+use xgamer6\MTD\task\SendWebhookTask;
 use pocketmine\scheduler\AsyncTask;
 use pocketmine\Server;
 
@@ -20,8 +20,8 @@ class Main extends PluginBase implements Listener {
         $this->getLogger()->info("§aPlugin got started!");
     }
 
-    public function onServerStart(ServerStartEvent $event): void {
-        $webhookUrl = $this->getConfig()->get("webhook_url"); // Replace with your config key
+    public function onServerStart(ServerCommandEvent $event): void { // Corrected parameter type
+        $webhookUrl = $this->getConfig()->get("webhook_url");
 
         if (!empty($webhookUrl)) {
             $this->getServer()->getAsyncPool()->submitTask(new SendWebhookTask($webhookUrl, "Server started ✅"));
